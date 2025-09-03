@@ -29,7 +29,7 @@ public class PollController
 
     @PostMapping
     public ResponseEntity<Poll> createPoll(@RequestBody CreatePollRequest req) {
-        Optional<User> creator = Optional.ofNullable(pollManager.getUserFromId(req.userId));
+        Optional<User> creator = Optional.ofNullable(pollManager.getUsers().get(req.userId));
         if (creator.isEmpty()) {
             throw new RuntimeException("User not found: "  + req.userId);
         }

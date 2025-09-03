@@ -21,7 +21,7 @@ public class PollManager {
     private final AtomicLong userIdGen = new AtomicLong(1);
     private final AtomicLong voteIdGen = new AtomicLong(1);
     private final AtomicLong pollIdGen = new AtomicLong(1);
-    private final AtomicLong optionIdGen = new AtomicLong(1);
+
 
     public void createUser(String username, String email) {
         User user = new User();
@@ -42,6 +42,8 @@ public class PollManager {
         List<VoteOption> voteOptions = new ArrayList<>();
         int presentationOrder = 0;
 
+        final AtomicLong optionIdGen = new AtomicLong(1);
+
         for (String option : options) {
             VoteOption voteOption = new VoteOption();
             voteOption.setId(optionIdGen.getAndIncrement());
@@ -55,8 +57,12 @@ public class PollManager {
         polls.put(poll.getId(), poll);
     }
 
-
-    public User getUserFromId(Long id) {
-        return users.get(id);
+    public void addOrUpdateVote(User user, Poll poll, VoteOption option) {
+        Vote vote = new Vote();
+        vote.setPublishedAt(Instant.now());
+        vote.setUserId(user.getId());
+        vote.setPollId(poll.getId());
+        vote.setVoteOptionId(option.getId());
+        votes.put(vote.getVoteId(), vote);
     }
 }
