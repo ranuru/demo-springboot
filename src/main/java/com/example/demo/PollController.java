@@ -45,4 +45,14 @@ public class PollController
         return pollManager.getPolls().values();
     }
 
+    public static class DeletePollRequest {
+        public Long id;
+
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Poll> deletePoll(@RequestBody DeletePollRequest req) {
+        pollManager.deletePoll(req.id);
+        return ResponseEntity.ok().build();
+    }
 }

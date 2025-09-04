@@ -58,11 +58,29 @@ public class PollManager {
     }
 
     public void addOrUpdateVote(User user, Poll poll, VoteOption option) {
-        Vote vote = new Vote();
-        vote.setPublishedAt(Instant.now());
-        vote.setUserId(user.getId());
-        vote.setPollId(poll.getId());
-        vote.setVoteOptionId(option.getId());
-        votes.put(vote.getVoteId(), vote);
+        Vote newVote = new Vote();
+        newVote.setPublishedAt(Instant.now());
+        newVote.setUserId(user.getId());
+        newVote.setPollId(poll.getId());
+        newVote.setVoteId(voteIdGen.getAndIncrement());
+        List<Vote> oldVotes = votes.values().stream().toList();
+        for (Vote vote : oldVotes) {
+            if (vote.getUserId() == user.getId() && vote.getPollId() ==  poll.getId()) {
+                votes.remove(vote.getVoteId());
+            }
+        }
+        newVote.setVoteOptionId(option.getId());
+        votes.put(newVote.getVoteId(), newVote);
     }
-}
+
+    public void deletePoll(Long pollId) {
+        polls.remove(pollId);
+        List<Vote> oldVotes = votes.values().stream().toList();
+        for (Vote vote : oldVotes) {
+            if (vote.getPollId() == pollId) {
+                votes.remove(vote.getVoteId());
+            }
+        }
+    }
+
+ }

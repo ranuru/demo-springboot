@@ -36,7 +36,9 @@ public class VoteController {
             pollManager.addOrUpdateVote(user.get(), poll, option);
             break;
         }
-        else { pollManager.addOrUpdateVote(anonymous, poll, option);
+        else if (option.getId() == req.optionId) {
+            pollManager.addOrUpdateVote(anonymous, poll, option);
+            break;
     }
     }
     return  ResponseEntity.ok().build();

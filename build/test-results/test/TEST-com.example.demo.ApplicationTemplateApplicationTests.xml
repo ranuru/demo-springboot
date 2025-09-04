@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.demo.ApplicationTemplateApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-08-25T11:58:03.937Z" hostname="Runars-MacBook-Air.local" time="0.945">
+<testsuite name="com.example.demo.ApplicationTemplateApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-04T11:55:04" hostname="Runars-MacBook-Air.local" time="1.622">
   <properties/>
-  <testcase name="contextLoads()" classname="com.example.demo.ApplicationTemplateApplicationTests" time="0.945"/>
-  <system-out><![CDATA[13:58:00.971 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.ApplicationTemplateApplicationTests]: ApplicationTemplateApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-13:58:01.168 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.ApplicationTemplateApplication for test class com.example.demo.ApplicationTemplateApplicationTests
+  <testcase name="contextLoads()" classname="com.example.demo.ApplicationTemplateApplicationTests" time="1.622"/>
+  <system-out><![CDATA[13:55:00.912 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.ApplicationTemplateApplicationTests]: ApplicationTemplateApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:55:01.234 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.ApplicationTemplateApplication for test class com.example.demo.ApplicationTemplateApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,9 +14,9 @@
 
  :: Spring Boot ::                (v3.5.5)
 
-2025-08-25T13:58:02.026+02:00  INFO 8270 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : Starting ApplicationTemplateApplicationTests using Java 24.0.2 with PID 8270 (started by runarrossevold in /Users/runarrossevold/Documents/DAT250/demo)
-2025-08-25T13:58:02.030+02:00  INFO 8270 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2025-08-25T13:58:03.915+02:00  INFO 8270 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : Started ApplicationTemplateApplicationTests in 2.48 seconds (process running for 4.677)
+2025-09-04T13:55:02.148+02:00  INFO 43235 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : Starting ApplicationTemplateApplicationTests using Java 21.0.8 with PID 43235 (started by runarrossevold in /Users/runarrossevold/Documents/DAT250/demo-springboot)
+2025-09-04T13:55:02.151+02:00  INFO 43235 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2025-09-04T13:55:04.039+02:00  INFO 43235 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : Started ApplicationTemplateApplicationTests in 2.524 seconds (process running for 4.951)
 ]]></system-out>
   <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (/Users/runarrossevold/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.7/fbf3d6d649ed37fc9e9c59480a05be0a26e3c2da/byte-buddy-agent-1.17.7.jar)
