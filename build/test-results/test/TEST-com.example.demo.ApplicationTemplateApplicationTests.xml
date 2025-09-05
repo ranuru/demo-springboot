@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.demo.ApplicationTemplateApplicationTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-05T13:40:44" hostname="Runars-MacBook-Air.local" time="2.601">
+<testsuite name="com.example.demo.ApplicationTemplateApplicationTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-05T13:47:05" hostname="Runars-MacBook-Air.local" time="2.269">
   <properties/>
-  <testcase name="testScenario()" classname="com.example.demo.ApplicationTemplateApplicationTests" time="2.581"/>
-  <testcase name="contextLoads()" classname="com.example.demo.ApplicationTemplateApplicationTests" time="0.017"/>
-  <system-out><![CDATA[15:40:39.813 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.ApplicationTemplateApplicationTests]: ApplicationTemplateApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:40:40.141 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.ApplicationTemplateApplication for test class com.example.demo.ApplicationTemplateApplicationTests
+  <testcase name="testScenario()" classname="com.example.demo.ApplicationTemplateApplicationTests" time="2.258"/>
+  <testcase name="contextLoads()" classname="com.example.demo.ApplicationTemplateApplicationTests" time="0.008"/>
+  <system-out><![CDATA[15:47:02.105 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.ApplicationTemplateApplicationTests]: ApplicationTemplateApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:47:02.755 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.ApplicationTemplateApplication for test class com.example.demo.ApplicationTemplateApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -15,19 +15,19 @@
 
  :: Spring Boot ::                (v3.5.5)
 
-2025-09-05T15:40:41.100+02:00  INFO 47313 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : Starting ApplicationTemplateApplicationTests using Java 21.0.8 with PID 47313 (started by runarrossevold in /Users/runarrossevold/Documents/DAT250/demo-springboot)
-2025-09-05T15:40:41.103+02:00  INFO 47313 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2025-09-05T15:40:42.864+02:00  INFO 47313 --- [Application template] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2025-09-05T15:40:42.906+02:00  INFO 47313 --- [Application template] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-05T15:40:42.907+02:00  INFO 47313 --- [Application template] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-05T15:40:43.015+02:00  INFO 47313 --- [Application template] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-05T15:40:43.019+02:00  INFO 47313 --- [Application template] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1862 ms
-2025-09-05T15:40:43.994+02:00  INFO 47313 --- [Application template] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 50906 (http) with context path '/'
-2025-09-05T15:40:44.011+02:00  INFO 47313 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : Started ApplicationTemplateApplicationTests in 3.535 seconds (process running for 6.125)
-2025-09-05T15:40:46.163+02:00  INFO 47313 --- [Application template] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-05T15:40:46.163+02:00  INFO 47313 --- [Application template] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-05T15:40:46.166+02:00  INFO 47313 --- [Application template] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-Returning polls:[Poll(question=Is Java fun?, publishedAt=2025-09-05T13:40:46.516036Z, validUntil=2025-09-05T13:40:46.490679Z, options=[VoteOption(id=1, caption=Yes, presentationOrder=0), VoteOption(id=2, caption=No, presentationOrder=1)], id=1, creator=User(username=alice, email=alice@example.com, id=1))]
+2025-09-05T15:47:03.772+02:00  INFO 47500 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : Starting ApplicationTemplateApplicationTests using Java 21.0.8 with PID 47500 (started by runarrossevold in /Users/runarrossevold/Documents/DAT250/demo-springboot)
+2025-09-05T15:47:03.776+02:00  INFO 47500 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2025-09-05T15:47:05.064+02:00  INFO 47500 --- [Application template] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-09-05T15:47:05.086+02:00  INFO 47500 --- [Application template] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-05T15:47:05.087+02:00  INFO 47500 --- [Application template] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-05T15:47:05.158+02:00  INFO 47500 --- [Application template] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-05T15:47:05.160+02:00  INFO 47500 --- [Application template] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1344 ms
+2025-09-05T15:47:05.930+02:00  INFO 47500 --- [Application template] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 50953 (http) with context path '/'
+2025-09-05T15:47:05.943+02:00  INFO 47500 --- [Application template] [    Test worker] .e.d.ApplicationTemplateApplicationTests : Started ApplicationTemplateApplicationTests in 2.801 seconds (process running for 7.265)
+2025-09-05T15:47:07.786+02:00  INFO 47500 --- [Application template] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-05T15:47:07.786+02:00  INFO 47500 --- [Application template] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-05T15:47:07.788+02:00  INFO 47500 --- [Application template] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Returning polls:[Poll(question=Is Java fun?, publishedAt=2025-09-05T13:47:08.119079Z, validUntil=2025-09-05T13:47:08.081264Z, options=[VoteOption(id=1, caption=Yes, presentationOrder=0), VoteOption(id=2, caption=No, presentationOrder=1)], id=1, creator=User(username=alice, email=alice@example.com, id=1))]
 ]]></system-out>
   <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (/Users/runarrossevold/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.7/fbf3d6d649ed37fc9e9c59480a05be0a26e3c2da/byte-buddy-agent-1.17.7.jar)
