@@ -9,5 +9,9 @@ This step was quite straight forward, and I implemented the domain classes as si
 I implemented the test scenarios and the methods for handling the tests in parallel (e.g. I created the http request for creating a new user after creating the method in VoteController).
 The main challenge I had here was how to implement the methods and how to use the SpringBoot library for this, and how to use the annotations. I managed to be able to eventually solve all the test scenarios and was satisfied with the results I was given when I ran the test requests in Bruno.
 ### Step 5
-The real headache was implementing the tests inside the project so that I didn't have to manually run them in the Bruno client. The problems here was how I had implemented the methods originally, and as they were all working fine in Bruno I was confused as to why they didn't work correctly in Java. The main problem was that my methods for creating entities didn't return anything (void methods), and the tests relied on the objects being stored as return values.
+The real headache was implementing the tests inside the project so that I didn't have to manually run them in the Bruno client. The problems here was how I had implemented the methods originally, and as they were all working fine in Bruno I was confused as to why they didn't work correctly when trying to automate the tests. The main problem was that my methods for creating entities didn't return anything (void methods), and the tests relied on the objects being stored as return values.
+I spent quite a few hours trying to figure out what was wrong here, so when the error was so trivial it was not very pleasant. I changed the methods in the controller classes to return the objects themselves when returning ResponseEntity, so that the tests worked properly. This also had the added feature of returning the result of a POST request in Bruno.
 
+### Other technical issues
+- I encountered issues regarding JDK versions and such as I used my laptop and my desktop to work on this project, which did not have the same java version. 
+- Build errors caused by my main.yml config in github workflow being configured for java 24. 
