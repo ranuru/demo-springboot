@@ -1,6 +1,11 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 
+import com.example.demo.dto.CreatePollRequest;
+import com.example.demo.dto.DeletePollRequest;
+import com.example.demo.manager.PollManager;
+import com.example.demo.domain.Poll;
+import com.example.demo.domain.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,23 +25,22 @@ public class PollController
         this.pollManager = pollManager;
     }
 
-    public static class CreatePollRequest {
-        public Long userId;
-        public String question;
-        public Instant validUntil;
-        public List<String> options;
-    }
-
     @PostMapping
     public ResponseEntity<Poll> createPoll(@RequestBody CreatePollRequest req) {
-        Optional<User> creator = Optional.ofNullable(pollManager.getUsers().get(req.userId));
+
+        Long userId = req.getUserId();
+        String question = req.getQuestion();
+        Instant validUntil = req.getValidUntil();
+        List<String> options =  req.getOptions();
+
+        Optional<User> creator = Optional.ofNullable(pollManager.getUsers().get(userId));
         if (creator.isEmpty()) {
-            throw new RuntimeException("User not found: "  + req.userId);
+            throw new RuntimeException("User not found: "  + userId);
         }
         pollManager.createPoll(creator.get(),
-                req.question,
-                req.validUntil,
-                req.options);
+                question,
+                validUntil,
+                options);
         return ResponseEntity.ok().build();
     }
 
@@ -45,14 +49,9 @@ public class PollController
         return pollManager.getPolls().values();
     }
 
-    public static class DeletePollRequest {
-        public Long id;
-
-    }
-
     @DeleteMapping
     public ResponseEntity<Poll> deletePoll(@RequestBody DeletePollRequest req) {
-        pollManager.deletePoll(req.id);
+        pollManager.deletePoll(req.getId());
         return ResponseEntity.ok().build();
     }
 }
