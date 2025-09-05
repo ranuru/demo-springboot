@@ -6,6 +6,7 @@ import com.example.demo.domain.Poll;
 import com.example.demo.domain.User;
 import com.example.demo.domain.Vote;
 import com.example.demo.domain.VoteOption;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +19,7 @@ public class VoteController {
 
     private final PollManager pollManager;
 
+    @Autowired
     public VoteController (PollManager pollManager) {
         this.pollManager = pollManager;
     }
@@ -34,17 +36,19 @@ public class VoteController {
         Optional<User> user = Optional.ofNullable(pollManager.getUsers().get(userId));
         Poll poll = pollManager.getPolls().get(pollId);
 
+        Vote vote = new Vote();
+
     for (VoteOption option : poll.getOptions()) {
         if (option.getId() == optionId && user.isPresent()) {
-            pollManager.addOrUpdateVote(user.get(), poll, option);
+            vote = pollManager.addOrUpdateVote(user.get(), poll, option);
             break;
         }
         else if (option.getId() == optionId) {
-            pollManager.addOrUpdateVote(anonymous, poll, option);
+            vote = pollManager.addOrUpdateVote(anonymous, poll, option);
             break;
     }
     }
-    return  ResponseEntity.ok().build();
+    return  ResponseEntity.ok(vote);
 }
     @GetMapping
     public Collection<Vote> getVotes() {

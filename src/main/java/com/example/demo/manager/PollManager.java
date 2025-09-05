@@ -7,6 +7,7 @@ import com.example.demo.domain.Vote;
 import com.example.demo.domain.VoteOption;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -27,15 +28,16 @@ public class PollManager {
     private final AtomicLong pollIdGen = new AtomicLong(1);
 
 
-    public void createUser(String username, String email) {
+    public ResponseEntity<User> createUser(String username, String email) {
         User user = new User();
         user.setId(userIdGen.getAndIncrement());
         user.setUsername(username);
         user.setEmail(email);
         users.put(user.getId(), user);
+        return ResponseEntity.ok(user);
     }
 
-    public void createPoll(User creator, String question, Instant validUntil, List<String> options) {
+    public Poll createPoll(User creator, String question, Instant validUntil, List<String> options) {
         Poll poll = new Poll();
         poll.setId(pollIdGen.getAndIncrement());
         poll.setPublishedAt(Instant.now());
@@ -59,9 +61,10 @@ public class PollManager {
         }
         poll.setOptions(voteOptions);
         polls.put(poll.getId(), poll);
+        return poll;
     }
 
-    public void addOrUpdateVote(User user, Poll poll, VoteOption option) {
+    public Vote addOrUpdateVote(User user, Poll poll, VoteOption option) {
         Vote newVote = new Vote();
         newVote.setPublishedAt(Instant.now());
         newVote.setUserId(user.getId());
@@ -75,6 +78,7 @@ public class PollManager {
         }
         newVote.setVoteOptionId(option.getId());
         votes.put(newVote.getVoteId(), newVote);
+        return newVote;
     }
 
     public void deletePoll(Long pollId) {

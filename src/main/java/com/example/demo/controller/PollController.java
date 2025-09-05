@@ -2,10 +2,10 @@ package com.example.demo.controller;
 
 
 import com.example.demo.dto.CreatePollRequest;
-import com.example.demo.dto.DeletePollRequest;
 import com.example.demo.manager.PollManager;
 import com.example.demo.domain.Poll;
 import com.example.demo.domain.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +20,7 @@ public class PollController
 {
     private final PollManager pollManager;
 
+    @Autowired
     public PollController(PollManager pollManager)
     {
         this.pollManager = pollManager;
@@ -37,21 +38,21 @@ public class PollController
         if (creator.isEmpty()) {
             throw new RuntimeException("User not found: "  + userId);
         }
-        pollManager.createPoll(creator.get(),
-                question,
-                validUntil,
-                options);
-        return ResponseEntity.ok().build();
+        Poll poll = pollManager.createPoll(creator.get(), question, validUntil, options);
+        return ResponseEntity.ok(poll);
     }
 
     @GetMapping
     public Collection<Poll> getPolls() {
-        return pollManager.getPolls().values();
+        Collection<Poll> polls = pollManager.getPolls().values();
+        System.out.println("Returning polls:" + polls);
+        return polls;
     }
 
-    @DeleteMapping
-    public ResponseEntity<Poll> deletePoll(@RequestBody DeletePollRequest req) {
-        pollManager.deletePoll(req.getId());
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletePoll(@PathVariable Long id) {
+        pollManager.deletePoll(id);
         return ResponseEntity.ok().build();
     }
+
 }
