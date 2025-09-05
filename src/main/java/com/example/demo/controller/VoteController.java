@@ -1,5 +1,11 @@
-package com.example.demo;
+package com.example.demo.controller;
 
+import com.example.demo.dto.VoteRequest;
+import com.example.demo.manager.PollManager;
+import com.example.demo.domain.Poll;
+import com.example.demo.domain.User;
+import com.example.demo.domain.Vote;
+import com.example.demo.domain.VoteOption;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,27 +22,24 @@ public class VoteController {
         this.pollManager = pollManager;
     }
 
-    public static class VoteRequest {
-        public Long userId;
-        public Long pollId;
-        public Long optionId;
-    }
-
     @PostMapping
     public ResponseEntity<Vote> addOrUpdateVote(@RequestBody VoteRequest req) {
         // anonymous voting
         User anonymous = new User();
+        Long userId = req.getUserId();
+        Long pollId = req.getPollId();
+        Long optionId = req.getOptionId();
 
 
-        Optional<User> user = Optional.ofNullable(pollManager.getUsers().get(req.userId));
-        Poll poll = pollManager.getPolls().get(req.pollId);
+        Optional<User> user = Optional.ofNullable(pollManager.getUsers().get(userId));
+        Poll poll = pollManager.getPolls().get(pollId);
 
     for (VoteOption option : poll.getOptions()) {
-        if (option.getId() == req.optionId && user.isPresent()) {
+        if (option.getId() == optionId && user.isPresent()) {
             pollManager.addOrUpdateVote(user.get(), poll, option);
             break;
         }
-        else if (option.getId() == req.optionId) {
+        else if (option.getId() == optionId) {
             pollManager.addOrUpdateVote(anonymous, poll, option);
             break;
     }

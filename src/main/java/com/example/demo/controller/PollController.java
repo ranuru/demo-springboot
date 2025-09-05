@@ -1,6 +1,10 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 
+import com.example.demo.dto.DeletePollRequest;
+import com.example.demo.manager.PollManager;
+import com.example.demo.domain.Poll;
+import com.example.demo.domain.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,14 +49,9 @@ public class PollController
         return pollManager.getPolls().values();
     }
 
-    public static class DeletePollRequest {
-        public Long id;
-
-    }
-
     @DeleteMapping
     public ResponseEntity<Poll> deletePoll(@RequestBody DeletePollRequest req) {
-        pollManager.deletePoll(req.id);
+        pollManager.deletePoll(req.getId());
         return ResponseEntity.ok().build();
     }
 }

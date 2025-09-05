@@ -1,6 +1,10 @@
-package com.example.demo;
+package com.example.demo.manager;
 
 
+import com.example.demo.domain.Poll;
+import com.example.demo.domain.User;
+import com.example.demo.domain.Vote;
+import com.example.demo.domain.VoteOption;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.stereotype.Component;
