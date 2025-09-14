@@ -16,6 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/polls")
+@CrossOrigin
 public class PollController
 {
     private final PollManager pollManager;

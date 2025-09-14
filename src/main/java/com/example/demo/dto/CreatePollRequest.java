@@ -1,11 +1,13 @@
 package com.example.demo.dto;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 import java.util.List;
 
 @Data
+@NoArgsConstructor
 public class CreatePollRequest {
     private Long userId;
     private String question;

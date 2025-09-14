@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/votes")
+@CrossOrigin
 public class VoteController {
 
     private final PollManager pollManager;
@@ -25,7 +26,7 @@ public class VoteController {
     }
 
     @PostMapping
-    public ResponseEntity<Vote> addOrUpdateVote(@RequestBody VoteRequest req) {
+    public ResponseEntity<Poll> addOrUpdateVote(@RequestBody VoteRequest req) {
         // anonymous voting
         User anonymous = new User();
         Long userId = req.getUserId();
@@ -36,19 +37,17 @@ public class VoteController {
         Optional<User> user = Optional.ofNullable(pollManager.getUsers().get(userId));
         Poll poll = pollManager.getPolls().get(pollId);
 
-        Vote vote = new Vote();
-
     for (VoteOption option : poll.getOptions()) {
         if (option.getId() == optionId && user.isPresent()) {
-            vote = pollManager.addOrUpdateVote(user.get(), poll, option);
+            poll = pollManager.addOrUpdateVote(user.get(), poll, option);
             break;
         }
         else if (option.getId() == optionId) {
-            vote = pollManager.addOrUpdateVote(anonymous, poll, option);
+            poll = pollManager.addOrUpdateVote(anonymous, poll, option);
             break;
     }
     }
-    return  ResponseEntity.ok(vote);
+    return  ResponseEntity.ok(poll);
 }
     @GetMapping
     public Collection<Vote> getVotes() {

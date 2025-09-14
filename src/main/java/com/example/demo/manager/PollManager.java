@@ -55,6 +55,7 @@ public class PollManager {
             voteOption.setId(optionIdGen.getAndIncrement());
             voteOption.setCaption(option);
             voteOption.setPresentationOrder(presentationOrder);
+            voteOption.setVotes(0);
             voteOptions.add(voteOption);
 
             presentationOrder++;
@@ -64,7 +65,7 @@ public class PollManager {
         return poll;
     }
 
-    public Vote addOrUpdateVote(User user, Poll poll, VoteOption option) {
+    public Poll addOrUpdateVote(User user, Poll poll, VoteOption option) {
         Vote newVote = new Vote();
         newVote.setPublishedAt(Instant.now());
         newVote.setUserId(user.getId());
@@ -77,8 +78,13 @@ public class PollManager {
             }
         }
         newVote.setVoteOptionId(option.getId());
+        for (int i = 0; i < poll.getOptions().size(); i++) {
+            if (poll.getOptions().get(i) == option) {
+                option.setVotes(option.getVotes() + 1);
+            }
+        }
         votes.put(newVote.getVoteId(), newVote);
-        return newVote;
+        return poll;
     }
 
     public void deletePoll(Long pollId) {

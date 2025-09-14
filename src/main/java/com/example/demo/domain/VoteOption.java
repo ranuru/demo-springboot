@@ -11,4 +11,5 @@ public class VoteOption {
     private long id;
     private String caption;
     private int presentationOrder;
+    private int votes;
 }
