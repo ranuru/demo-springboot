@@ -12,11 +12,7 @@
         <module name="demo.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="24">
-      <module name="demo" target="21" />
-      <module name="demo.main" target="21" />
-      <module name="demo.test" target="21" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="21" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="-parameters" />

@@ -1,4 +1,4 @@
-package com.example.demo.dto;
+package no.hvl.dat250.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

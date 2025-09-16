@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package no.hvl.dat250.domain;
 
 
 import lombok.Data;

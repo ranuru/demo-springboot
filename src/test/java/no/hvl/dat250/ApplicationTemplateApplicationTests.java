@@ -1,10 +1,10 @@
-package com.example.demo;
+package no.hvl.dat250;
 
-import com.example.demo.domain.Poll;
-import com.example.demo.domain.User;
-import com.example.demo.domain.Vote;
-import com.example.demo.dto.CreatePollRequest;
-import com.example.demo.dto.VoteRequest;
+import no.hvl.dat250.domain.Poll;
+import no.hvl.dat250.domain.User;
+import no.hvl.dat250.domain.Vote;
+import no.hvl.dat250.dto.CreatePollRequest;
+import no.hvl.dat250.dto.VoteRequest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

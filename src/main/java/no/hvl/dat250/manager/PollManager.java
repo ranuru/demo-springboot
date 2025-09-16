@@ -1,10 +1,10 @@
-package com.example.demo.manager;
+package no.hvl.dat250.manager;
 
 
-import com.example.demo.domain.Poll;
-import com.example.demo.domain.User;
-import com.example.demo.domain.Vote;
-import com.example.demo.domain.VoteOption;
+import no.hvl.dat250.domain.Poll;
+import no.hvl.dat250.domain.User;
+import no.hvl.dat250.domain.Vote;
+import no.hvl.dat250.domain.VoteOption;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.http.ResponseEntity;

@@ -1,10 +1,10 @@
-package com.example.demo.controller;
+package no.hvl.dat250.controller;
 
 
-import com.example.demo.dto.CreatePollRequest;
-import com.example.demo.manager.PollManager;
-import com.example.demo.domain.Poll;
-import com.example.demo.domain.User;
+import no.hvl.dat250.dto.CreatePollRequest;
+import no.hvl.dat250.manager.PollManager;
+import no.hvl.dat250.domain.Poll;
+import no.hvl.dat250.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -28,6 +28,9 @@ dependencies {
 
     testCompileOnly("org.projectlombok:lombok:1.18.38")
     testAnnotationProcessor("org.projectlombok:lombok:1.18.38")
+
+    implementation("org.hibernate.orm:hibernate-core:7.1.1.Final")
+    implementation("com.h2database:h2:2.3.232")
 }
 
 tasks.withType<Test> {
