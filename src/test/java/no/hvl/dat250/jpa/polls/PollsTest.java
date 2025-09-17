@@ -12,10 +12,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
- import no.hvl.dat250.domain.Poll;
- import no.hvl.dat250.domain.User;
- import no.hvl.dat250.domain.VoteOption;
- import no.hvl.dat250.domain.Vote;
+import no.hvl.dat250.domain.Poll;
+import no.hvl.dat250.domain.User;
+import no.hvl.dat250.domain.VoteOption;
+import no.hvl.dat250.domain.Vote;
 
 
 public class PollsTest {
