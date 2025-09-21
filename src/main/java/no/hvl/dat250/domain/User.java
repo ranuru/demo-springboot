@@ -1,5 +1,6 @@
 package no.hvl.dat250.domain;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,10 +8,14 @@ import java.util.LinkedHashSet;
 
 @Data
 @NoArgsConstructor
+@Entity
+@Table(name = "users")
 public class User {
     private LinkedHashSet<Object> created;
     private String username;
     private String email;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     /**

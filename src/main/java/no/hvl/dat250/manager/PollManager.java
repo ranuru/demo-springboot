@@ -43,7 +43,7 @@ public class PollManager {
         poll.setPublishedAt(Instant.now());
         poll.setQuestion(question);
         poll.setValidUntil(validUntil);
-        poll.setCreator(creator);
+        poll.setCreatedBy(creator);
 
         List<VoteOption> voteOptions = new ArrayList<>();
         int presentationOrder = 0;

@@ -1,22 +1,30 @@
 package no.hvl.dat250.domain;
 
 
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
+@Entity
 public class Poll {
-
 private String question;
 private Instant publishedAt;
 private Instant validUntil;
-private List<VoteOption> options;
+
+@OneToMany(mappedBy = "poll", cascade = CascadeType.ALL, orphanRemoval = true)
+private List<VoteOption> options =  new ArrayList<>();
+
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
 private Long id;
-private User creator;
+
+@ManyToOne
+@JoinColumn(name = "user_id")
+private User createdBy;
 
 
 
