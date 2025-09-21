@@ -1,16 +1,46 @@
-…21:01:47.344 [Test worker] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: polls]
-k21:01:47.422 [Test worker] INFO org.hibernate.Version -- HHH000412: Hibernate ORM core version 7.1.1.Final
-—21:01:47.531 [Test worker] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
-e21:01:47.624 [Test worker] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Database info:
-'	Database JDBC URL [jdbc:h2:mem:polls]
+…22:18:25.117 [Test worker] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: polls]
+k22:18:25.215 [Test worker] INFO org.hibernate.Version -- HHH000412: Hibernate ORM core version 7.1.1.Final
+—22:18:25.365 [Test worker] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+e22:18:25.473 [Test worker] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+Q	Database JDBC URL [jdbc:h2:mem:polls;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false]
 !	Database driver: H2 JDBC Driver
 	Database dialect: H2Dialect
 	Database version: 2.3.232
-&	Default catalog/schema: POLLS/PUBLIC
+&	Default catalog/schema: polls/PUBLIC
 	Autocommit mode: false
 !	Isolation level: READ_COMMITTED
 	JDBC fetch size: 100
 +	Pool: DriverManagerConnectionProviderImpl
 	Minimum pool size: 1
 	Maximum pool size: 20
-â21:01:48.055 [Test worker] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+â22:18:25.958 [Test worker] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+…22:18:26.231 [Test worker] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: polls]
+—22:18:26.238 [Test worker] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+e22:18:26.239 [Test worker] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+Q	Database JDBC URL [jdbc:h2:mem:polls;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false]
+!	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.3.232
+&	Default catalog/schema: polls/PUBLIC
+	Autocommit mode: false
+!	Isolation level: READ_COMMITTED
+	JDBC fetch size: 100
++	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+â22:18:26.265 [Test worker] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+…22:18:26.303 [Test worker] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: polls]
+—22:18:26.308 [Test worker] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+e22:18:26.309 [Test worker] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+Q	Database JDBC URL [jdbc:h2:mem:polls;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false]
+!	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.3.232
+&	Default catalog/schema: polls/PUBLIC
+	Autocommit mode: false
+!	Isolation level: READ_COMMITTED
+	JDBC fetch size: 100
++	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+â22:18:26.331 [Test worker] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
