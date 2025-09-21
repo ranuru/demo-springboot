@@ -1,7 +1,7 @@
-…19:13:46.322 [Test worker] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: polls]
-k19:13:46.404 [Test worker] INFO org.hibernate.Version -- HHH000412: Hibernate ORM core version 7.1.1.Final
-—19:13:46.511 [Test worker] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
-e19:13:46.600 [Test worker] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+…21:01:47.344 [Test worker] INFO org.hibernate.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: polls]
+k21:01:47.422 [Test worker] INFO org.hibernate.Version -- HHH000412: Hibernate ORM core version 7.1.1.Final
+—21:01:47.531 [Test worker] WARN org.hibernate.orm.connections.pooling -- HHH10001002: Using built-in connection pool (not intended for production use)
+e21:01:47.624 [Test worker] INFO org.hibernate.orm.connections.pooling -- HHH10001005: Database info:
 '	Database JDBC URL [jdbc:h2:mem:polls]
 !	Database driver: H2 JDBC Driver
 	Database dialect: H2Dialect
@@ -13,4 +13,4 @@
 +	Pool: DriverManagerConnectionProviderImpl
 	Minimum pool size: 1
 	Maximum pool size: 20
-â19:13:47.029 [Test worker] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+â21:01:48.055 [Test worker] INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)

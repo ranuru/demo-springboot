@@ -12,11 +12,20 @@ import java.time.Instant;
 @Entity
 public class Vote {
     private Instant publishedAt;
+
+    @ManyToOne
+    private User user;
+
     private long userId;
     private long pollId;
+
+
     @ManyToOne
-    @JoinColumn(name = "vote_option")
+    private Poll poll;
+
+    @ManyToOne
     private VoteOption votesOn;
+
     private long voteOptionId;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

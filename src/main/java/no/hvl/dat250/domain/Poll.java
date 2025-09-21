@@ -2,13 +2,16 @@ package no.hvl.dat250.domain;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 public class Poll {
 private String question;
@@ -23,7 +26,6 @@ private List<VoteOption> options =  new ArrayList<>();
 private Long id;
 
 @ManyToOne
-@JoinColumn(name = "user_id")
 private User createdBy;
 
 
@@ -40,7 +42,9 @@ private User createdBy;
     public VoteOption addVoteOption(String caption) {
         VoteOption option = new VoteOption();
         option.setCaption(caption);
+        option.setPresentationOrder(this.options.size());
         this.options.add(option);
+        option.setPoll(this);
         return option;
     }
 

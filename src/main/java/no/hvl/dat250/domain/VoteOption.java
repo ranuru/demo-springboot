@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Data
 @NoArgsConstructor
@@ -15,8 +18,8 @@ public class VoteOption {
     private long id;
     private String caption;
     private int presentationOrder;
-    private int votes;
     @ManyToOne
-    @JoinColumn(name = "poll_id")
     private Poll poll;
+    @OneToMany(mappedBy = "votesOn", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Vote> votes = new ArrayList<>();
 }

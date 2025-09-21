@@ -1,17 +1,26 @@
 package no.hvl.dat250.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "users")
 public class User {
-    private LinkedHashSet<Object> created;
+    @OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Poll> polls = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Vote> votes = new ArrayList<>();
+
     private String username;
     private String email;
     @Id
@@ -25,7 +34,6 @@ public class User {
     public User(String username, String email) {
         this.username = username;
         this.email = email;
-        this.created = new LinkedHashSet<>();
     }
 
     /**
@@ -36,6 +44,8 @@ public class User {
     public Poll createPoll(String question) {
         Poll poll = new Poll();
         poll.setQuestion(question);
+        poll.setCreatedBy(this);
+        polls.add(poll);
         return poll;
     }
 
@@ -45,7 +55,16 @@ public class User {
      */
     public Vote voteFor(VoteOption option) {
         Vote vote = new Vote();
-        option.setVotes(option.getVotes() + 1);
+        vote.setVotesOn(option);
+        vote.setUserId(this.id);
+        vote.setUser(this);
+        vote.setPoll(option.getPoll());
+
+        vote.setPollId(option.getPoll().getId());
+        votes.add(vote);
+
+        option.getVotes().add(vote);
+
         return vote;
     }
 }
