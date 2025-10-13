@@ -1,10 +1,9 @@
 package no.hvl.dat250;
 
-import no.hvl.dat250.domain.Poll;
-import no.hvl.dat250.domain.User;
-import no.hvl.dat250.domain.Vote;
-import no.hvl.dat250.dto.CreatePollRequest;
-import no.hvl.dat250.dto.VoteRequest;
+import java.time.Instant;
+import java.util.List;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,18 +11,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
 
-import java.time.Instant;
-import java.util.List;
-
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import no.hvl.dat250.domain.Poll;
+import no.hvl.dat250.domain.User;
+import no.hvl.dat250.domain.Vote;
+import no.hvl.dat250.dto.CreatePollRequest;
+import no.hvl.dat250.dto.VoteRequest;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ApplicationTemplateApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
+    @Test
+    void contextLoads() {
+    }
 
     @Autowired
     private TestRestTemplate restTemplate;
